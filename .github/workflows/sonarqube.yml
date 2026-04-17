@@ -1,11 +1,7 @@
 name: SonarQube analysis
-
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
 jobs:
   Analysis:
     runs-on: ubuntu-latest
@@ -13,7 +9,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Analyze with SonarCloud
         uses: SonarSource/sonarcloud-github-action@master
         env:
